@@ -1,11 +1,11 @@
 const WIDTH = 25
 const HEIGHT = 7
 
-const helloWorldString = `
-+---------------+
-|  hello world  |
-+---------------+
-`.trim()
+const helloWorldString = [
+    `+---------------+`,
+    `|  hello world  |`,
+    `+---------------+`
+].join('\n')
 
 setSize(WIDTH, HEIGHT)
 setFPS(4)

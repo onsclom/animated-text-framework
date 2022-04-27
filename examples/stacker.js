@@ -6,13 +6,12 @@ let playerBlock = {
     x: 0,
     dx: 1,
     size: 3,
-    framesTillMove: 7.5,
+    framesTillMove: 7,
 }
-
 let frameCount = 0
 
 function update() {
-    print('.......', 0, HEIGHT - playerBlock.curHeight)
+    print("".padEnd(WIDTH, "."), 0, HEIGHT - playerBlock.curHeight)
     frameCount += 1
     if (frameCount >= playerBlock.framesTillMove) {
         frameCount = 0
@@ -26,24 +25,17 @@ function update() {
     print("###", 2, HEIGHT - 1)
 }
 
-window.onpointerdown = () => {
-    pressed()
-}
-window.onkeydown = () => {
-    pressed()
-}
-
-function pressed() {
+window.onpointerdown = press
+window.onkeydown = press
+function press() {
     if (playerBlock.size == 0) {
-        window.refresh()
+        location.reload()
     }
-
     let newSize = 0
     for (let x = 0; x < WIDTH; x++) {
         if (get(x, HEIGHT - playerBlock.curHeight) == "#") {
             if (get(x, HEIGHT - playerBlock.curHeight + 1) != "#") {
                 print(".", x, HEIGHT - playerBlock.curHeight)
-                console.log("overlapper")
             } else {
                 newSize += 1
             }
@@ -51,7 +43,7 @@ function pressed() {
     }
     playerBlock.size = newSize
     playerBlock.curHeight += 1
-    playerBlock.framesTillMove -= .5 
+    playerBlock.framesTillMove -= .5
 }
 
 setSize(WIDTH, HEIGHT)
