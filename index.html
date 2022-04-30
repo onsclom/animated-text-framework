@@ -6,28 +6,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            font-family: monospace;
-            width: 100%;
-            height: 100%;
+        embed {
+            border: solid black 1px
         }
-
         body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            max-width: 40em;
+            margin: auto;
         }
     </style>
+
 </head>
 
 <body>
-    <script src="framework.js"></script>
-    <script src="examples/platformer.js"></script>
-</body>
+    <h1>
+        JavaScript Text Animation Framework
+    </h1>
+    <p>
+        A library that handles the DOM manipulation and update loop logic for monospaced text.
+    </p>
 
+    <h2>
+        Examples
+    </h2>
+    <ul>
+        <li>
+            <h3>
+                <a href="./examples/helloworld.js">
+                    Hello World
+                </a>
+            </h3>
+            <embed width="200px" height="150px" src="../examples/helloworld.html">
+
+        </li>
+        <li>
+            <h3>
+                <a href="./examples/stacker.js">
+                    Stacker
+                </a>
+            </h3>
+            <embed width="120px" height="180px" src="../examples/stacker.html">
+
+        </li>
+        <li>
+            <h3>
+                <a href="./examples/platformer.js">
+                    Platformer
+                </a>
+            </h3>
+            <embed width="250px" height="150px" src="../examples/platformer.html">
+        </li>
+    </ul>
+
+    <h2>
+        Documentation
+    </h2>
+    <ul>
+        <li>
+            <h3>
+                setSize ( width: int, height: int )
+            </h3>
+            <p>
+                Creates a text canvas with given width and height. Then adds pre element to body.
+            </p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <h3>
+                setFPS ( fps: int )
+            </h3>
+            <p>
+                Sets the target framerate to fps and begins the animation loop.
+            </p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <h3>
+                fillScreen ( brush: string )
+            </h3>
+            <p>
+                Fills screen with brush.
+            </p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <h3>
+                print ( text: string, x: int, y: int )
+            </h3>
+            <p>
+                Prints text at given x, y. Text can contain new lines.
+            </p>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <h3>
+                get ( x: int, y: int )
+            </h3>
+            <p>
+                Gets the current character at x, y.
+            </p>
+        </li>
+    </ul>
+
+    <h2>
+        Code
+    </h2>
+    <ul>
+        <li>
+            <a href="./framework.js">
+                framework.js
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/onsclom/AnimatedTextFramework">
+                GitHub
+            </a>
+        </li>
+    </ul>
+</body>
 </html>
