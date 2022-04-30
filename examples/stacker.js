@@ -28,7 +28,7 @@ function update() {
 window.onpointerdown = press
 window.onkeydown = press
 function press() {
-    if (playerBlock.size == 0) {
+    if (playerBlock.size == 0 || playerBlock.curHeight > HEIGHT) {
         location.reload()
     }
     let newSize = 0
